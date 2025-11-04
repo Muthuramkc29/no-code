@@ -1,34 +1,34 @@
 // llmNode.js
+import React from "react";
+import styled from "styled-components";
+import { BaseNode } from "../components/BaseNode";
 
-import { Handle, Position } from 'reactflow';
+const LLMNodeWrapper = styled(BaseNode)`
+  // Custom styles specific to LLMNode can be added here
+`;
+
+const Description = styled.p`
+  margin: 0;
+  font-size: 0.9em;
+`;
 
 export const LLMNode = ({ id, data }) => {
+  const inputs = [
+    { id: "system", label: "System" },
+    { id: "prompt", label: "Prompt" },
+  ];
+
+  const outputs = [{ id: "response", label: "Response" }];
 
   return (
-    <div style={{width: 200, height: 80, border: '1px solid black'}}>
-      <Handle
-        type="target"
-        position={Position.Left}
-        id={`${id}-system`}
-        style={{top: `${100/3}%`}}
-      />
-      <Handle
-        type="target"
-        position={Position.Left}
-        id={`${id}-prompt`}
-        style={{top: `${200/3}%`}}
-      />
-      <div>
-        <span>LLM</span>
-      </div>
-      <div>
-        <span>This is a LLM.</span>
-      </div>
-      <Handle
-        type="source"
-        position={Position.Right}
-        id={`${id}-response`}
-      />
-    </div>
+    <LLMNodeWrapper
+      id={id}
+      title="LLM"
+      inputs={inputs}
+      outputs={outputs}
+      data={data}
+    >
+      <Description>Large Language Model Node</Description>
+    </LLMNodeWrapper>
   );
-}
+};
