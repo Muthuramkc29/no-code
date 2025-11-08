@@ -1,8 +1,8 @@
 import { Handle, Position } from "reactflow";
-import { LlmSVG } from "../icons";
-import * as Node from "../components/BaseNode";
+import { LlmSVG } from "../../icons";
+import * as Node from "../commons/BaseNode";
 import { useState } from "react";
-import { dropdownTypeOptions as options } from "../constants/dropdownTypes";
+import { dropdownTypeOptions as options } from "../../constants/dropdownTypes";
 
 export const LLMNode = ({ id, data }) => {
   const [currName, setCurrName] = useState(data?.model || "");

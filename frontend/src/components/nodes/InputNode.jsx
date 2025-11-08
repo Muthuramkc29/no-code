@@ -1,10 +1,8 @@
-// inputNode.js
-
 import { useState } from "react";
 import { Handle, Position } from "reactflow";
-import { InputSVG } from "../icons";
-import * as Node from "../components/BaseNode";
-import { dropdownTypeOptions as options } from "../constants/dropdownTypes";
+import { InputSVG } from "../../icons";
+import * as Node from "../commons/BaseNode";
+import { dropdownTypeOptions as options } from "../../constants/dropdownTypes";
 
 export const InputNode = ({ id, data }) => {
   const [currName, setCurrName] = useState(

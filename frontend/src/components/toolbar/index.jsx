@@ -1,7 +1,6 @@
-// toolbar.js
-import { DraggableNode } from "./draggableNode";
-import * as NodeIcons from "./icons";
-import { TOOLBAR } from "./constants/pipelineToolbar";
+import { DraggableNode } from "../commons/DraggableNode";
+import * as NodeIcons from "../../icons";
+import { TOOLBAR } from "../../constants/pipelineToolbar";
 
 export const PipelineToolbar = () => {
   return (

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Handle, Position } from "reactflow";
-import { InputSVG } from "../icons";
-import * as Node from "../components/BaseNode";
+import { TextSVG } from "../../icons";
+import * as Node from "../commons/BaseNode";
 
 export const TextNode = ({ id, data }) => {
   const [currText, setCurrText] = useState(data?.text || "{{input}}");
@@ -13,7 +13,7 @@ export const TextNode = ({ id, data }) => {
   return (
     <Node.Root>
       <Node.Info
-        icon={<InputSVG size={24} />}
+        icon={<TextSVG size={24} />}
         title="Text"
         description=" Accepts Text from upstream nodes and allows you to write additional text / concatenate different texts to pass to downstream nodes."
       />

@@ -1,6 +1,6 @@
 // submit.js
 import React, { useState } from "react";
-import { useStore } from "./store";
+import { useStore } from "../../store";
 import { shallow } from "zustand/shallow";
 
 export const SubmitButton = () => {
@@ -42,7 +42,7 @@ export const SubmitButton = () => {
                 • Number of Edges: ${data.num_edges}
                 • Is DAG: ${data.is_dag ? "Yes" : "No"}`;
 
-      showAlert(message);
+      showAlert(message, !data.is_dag);
     } catch (error) {
       showAlert(error.message, true);
     } finally {
