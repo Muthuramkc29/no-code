@@ -1,31 +1,33 @@
+import { InputSVG, LlmSVG, OutputSVG, TextSVG } from "../icons";
+
 export const NODE_TYPES = {
   TEXT: "TEXT",
   LLM: "LLM",
-  INPUT: "CUSTOM_INPUT",
-  OUTPUT: "CUSTOM_OUTPUT",
+  INPUT: "INPUT",
+  OUTPUT: "OUTPUT",
 };
 
 const { INPUT, LLM, OUTPUT, TEXT } = NODE_TYPES;
 
 export const NODE_TYPES_META = {
-  [TEXT]: {
-    type: "text",
-    label: "Text",
-    icon: "TextSVG",
+  [INPUT]: {
+    type: "input",
+    label: "Input",
+    icon: InputSVG,
   },
   [LLM]: {
     type: "llm",
     label: "LLM",
-    icon: "LlmSVG",
-  },
-  [INPUT]: {
-    type: "customInput",
-    label: "Input",
-    icon: "InputSVG",
+    icon: LlmSVG,
   },
   [OUTPUT]: {
-    type: "customOutput",
+    type: "output",
     label: "Output",
-    icon: "OutputSVG",
+    icon: OutputSVG,
+  },
+  [TEXT]: {
+    type: "text",
+    label: "Text",
+    icon: TextSVG,
   },
 };

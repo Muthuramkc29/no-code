@@ -1,7 +1,5 @@
-import { NODE_TYPES } from "./nodeTypes";
-
 export const dropdownTypes = {
-  [NODE_TYPES.TEXT]: {
+  TEXT: {
     label: "Text",
     value: "text",
   },

@@ -4,8 +4,8 @@ import { OutputNode } from "./OutputNode";
 import { TextNode } from "./TextNode";
 
 export const nodeTypes = {
-  customInput: InputNode,
+  input: InputNode,
   llm: LLMNode,
-  customOutput: OutputNode,
+  output: OutputNode,
   text: TextNode,
 };

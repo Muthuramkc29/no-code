@@ -8,6 +8,7 @@ export const InputNode = ({ id, data }) => {
   const [currName, setCurrName] = useState(
     data?.inputName || id.replace("customInput-", "input_")
   );
+
   const [inputType, setInputType] = useState(data.inputType || "Text");
 
   const handleNameChange = (e) => {
@@ -22,21 +23,18 @@ export const InputNode = ({ id, data }) => {
     <Node.Root>
       <Node.Info
         icon={<InputSVG size={24} />}
-        title="Output"
-        description="Output data of different types from your workflow."
+        title="Input"
+        description="Pass data of different types into your workflow"
       />
       <Node.Body>
         <Node.Chip>input_0</Node.Chip>
+
+        <Node.Suggestion tip="Give the node a distinct name" />
         <Node.Dropdown
           label={"Type"}
           options={options}
           value={inputType}
           onChange={handleTypeChange}
-        />
-        <Node.InputField
-          label={"Output"}
-          value={currName}
-          onChange={handleNameChange}
         />
       </Node.Body>
       <Handle type="source" position={Position.Right} id={`${id}-value`} />
