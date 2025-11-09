@@ -22,7 +22,7 @@ const selector = (state) => ({
   onConnect: state.onConnect,
 });
 
-export const PipelineUI = () => {
+const PipelineUI = () => {
   const reactFlowWrapper = useRef(null);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
   const {
@@ -85,7 +85,7 @@ export const PipelineUI = () => {
 
   return (
     <>
-      <div ref={reactFlowWrapper} style={{ width: "100wv", height: "70vh" }}>
+      <div ref={reactFlowWrapper} style={{ width: "100wv", height: "75vh" }}>
         <ReactFlow
           nodes={nodes}
           edges={edges}
@@ -108,3 +108,5 @@ export const PipelineUI = () => {
     </>
   );
 };
+
+export default PipelineUI;

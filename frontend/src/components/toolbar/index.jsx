@@ -1,7 +1,7 @@
 import { DraggableNode } from "../commons/DraggableNode";
 import { TOOLBAR } from "../../constants/pipelineToolbar";
 
-export const PipelineToolbar = () => {
+const PipelineToolbar = () => {
   return (
     <div className="p-2.5">
       <div className="flex flex-wrap gap-2.5">
@@ -22,3 +22,5 @@ export const PipelineToolbar = () => {
     </div>
   );
 };
+
+export default PipelineToolbar;

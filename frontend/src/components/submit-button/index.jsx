@@ -1,9 +1,8 @@
-// submit.js
-import React, { useState } from "react";
+import { useState } from "react";
 import { useStore } from "../../store";
 import { shallow } from "zustand/shallow";
 
-export const SubmitButton = () => {
+const SubmitButton = () => {
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState(null);
   const { nodes, edges } = useStore(
@@ -52,18 +51,16 @@ export const SubmitButton = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center p-4">
-        <button
-          onClick={handleSubmit}
-          disabled={loading}
-          className={`bg-[rgb(99_102_241)] text-[rgb(250_250_255)] border-none px-4 py-2 rounded-md cursor-pointer font-semibold transition-colors duration-200 
+      <button
+        onClick={handleSubmit}
+        disabled={loading}
+        className={`bg-[rgb(99_102_241)] text-[rgb(250_250_255)] border-none px-2 py-[4px] text-[13px] rounded-md cursor-pointer font-semibold transition-colors duration-200 
             ${
               loading ? "bg-gray-200 cursor-not-allowed" : "hover:bg-secondary"
             }`}
-        >
-          {loading ? "Analyzing..." : "Submit Pipeline"}
-        </button>
-      </div>
+      >
+        {loading ? "Analyzing..." : "Submit Pipeline"}
+      </button>
       {alert && (
         <div
           className="fixed top-5 right-5 p-5 rounded-lg shadow-lg z-[1000] max-w-[380px] bg-green-50 text-green-800 border-l-4 border-green-500
@@ -89,3 +86,5 @@ export const SubmitButton = () => {
     </>
   );
 };
+
+export default SubmitButton;
