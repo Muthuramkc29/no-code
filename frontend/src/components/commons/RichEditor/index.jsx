@@ -162,7 +162,7 @@ const RichEditor = ({ value, onChange, placeholder }) => {
               top: "-9999px",
               left: "-9999px",
               position: "absolute",
-              zIndex: 1,
+              zIndex: 99,
               padding: "3px",
               background: "white",
               borderRadius: "4px",

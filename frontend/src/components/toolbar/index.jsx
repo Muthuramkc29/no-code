@@ -5,8 +5,8 @@ const PipelineToolbar = () => {
   return (
     <div className="p-2.5">
       <div className="flex flex-wrap gap-2.5">
-        {Object.keys(TOOLBAR.START).map((nodeType) => {
-          const node = TOOLBAR.START[nodeType];
+        {Object.keys(TOOLBAR).map((nodeType) => {
+          const node = TOOLBAR[nodeType];
           const Icon = node.icon;
 
           return (

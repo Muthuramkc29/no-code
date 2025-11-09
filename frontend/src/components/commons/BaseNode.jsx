@@ -1,5 +1,12 @@
 import RichEditor from "./RichEditor";
 
+/*
+ * Node.Root
+ *   - Purpose: Base wrapper container with visual boundary, shadow, and transitions.
+ *   - Props:
+ *       children: ReactNode — Nested Node.* subcomponents or custom JSX.
+ *
+ */
 const Root = ({ children }) => {
   return (
     <div
@@ -27,6 +34,15 @@ const Root = ({ children }) => {
   );
 };
 
+/*
+ * Node.Info
+ *   - Purpose: Header section for displaying icon, title, and description.
+ *   - Props:
+ *       icon: ReactNode — Optional leading icon.
+ *       title: string — Section title.
+ *       description: string — Supporting description text.
+ *       children: ReactNode — Optional child content (actions, tags, etc.).
+ */
 const Info = ({ icon, title, description, children }) => {
   return (
     <div className="flex flex-col gap-2 pl-4 py-3 m-3 bg-indigo-1 rounded-md border border-[rgb(165_180_252)]">
@@ -52,6 +68,13 @@ const Info = ({ icon, title, description, children }) => {
   );
 };
 
+/*
+ * Node.Body
+ *   - Purpose: Main content region for form fields, editors, or custom layouts.
+ *   - Props:
+ *       children: ReactNode — Inner content.
+ *
+ */
 const Body = ({ children }) => {
   return (
     <div className="flex flex-col flex-1 gap-3 relative px-[18px] pt-2 pb-4 w-full">
@@ -60,6 +83,12 @@ const Body = ({ children }) => {
   );
 };
 
+/*
+ * Node.Chip
+ *   - Purpose: Compact label for displaying state or categorization.
+ *   - Props:
+ *       children: ReactNode — Text or content within the chip.
+ */
 const Chip = ({ children }) => {
   return (
     <div
@@ -80,6 +109,17 @@ const Chip = ({ children }) => {
   );
 };
 
+/*
+ * Node.InputField
+ *   - Purpose: Labelled input or text area with optional variable-enabled RichEditor.
+ *   - Props:
+ *       label: string — Field label.
+ *       value: string — Controlled input value.
+ *       onChange: function — Change handler.
+ *       placeholder: string — Placeholder text.
+ *       allowVariables: boolean (default false) — Use RichEditor when true.
+ *       textarea: boolean (default false) — Render textarea instead of input.
+ */
 const InputField = ({
   label,
   value,
@@ -133,6 +173,15 @@ const InputField = ({
   );
 };
 
+/*
+ * Node.Dropdown
+ *   - Purpose: Select dropdown with labeled context.
+ *   - Props:
+ *       label: string — Field label.
+ *       options: Array<{label: string, value: string}> — Dropdown options.
+ *       value: string — Current selected value.
+ *       onChange: function — Change handler.
+ */
 const Dropdown = ({ label, options, value, onChange }) => {
   return (
     <div className="relative w-full nodrag h-full flex flex-col gap-2 my-2">
@@ -166,6 +215,13 @@ const Dropdown = ({ label, options, value, onChange }) => {
   );
 };
 
+/*
+ * Node.Suggestion
+ *   - Purpose: Suggestion banner with optional custom component.
+ *   - Props:
+ *       tip: string — Suggestion text.
+ *       customComponent: ReactNode — Overrides default suggestion rendering.
+ */
 const Suggestion = ({ tip, customComponent }) => {
   if (customComponent) {
     return customComponent;

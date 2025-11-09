@@ -24,10 +24,7 @@ const Header = () => {
         </div>
         <ol className="flex flex-wrap items-center text-semi-13">
           <li className="rounded-md px-4 text-[13px] hover:bg-fill-tertiary-fill hover:text-typography-primary-text opacity-50">
-            <p
-              className="flex items-center gap-2 text-[13px] hover:text-typography-primary-text cursor-pointer capitalize"
-              href=""
-            >
+            <p className="flex items-center gap-2 text-[13px] hover:text-typography-primary-text cursor-pointer capitalize">
               <span className="max-w-[240px] overflow-hidden text-ellipsis whitespace-nowrap">
                 pipelines
               </span>

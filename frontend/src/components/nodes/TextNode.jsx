@@ -15,7 +15,7 @@ export const TextNode = ({ id, data }) => {
       <Node.Info
         icon={<TextSVG size={24} />}
         title="Text"
-        description=" Accepts Text from upstream nodes and allows you to write additional text / concatenate different texts to pass to downstream nodes."
+        description="Accepts Text from upstream nodes and allows you to write additional text / concatenate different texts to pass to downstream nodes."
       />
       <Handle type="target" position={Position.Left} id={`${id}-text`} />
       <Node.Body>
