@@ -39,7 +39,7 @@ export const NODE_TYPES_META = {
   },
   [DATA_COLLECTOR]: {
     type: "data_collector",
-    label: "Data Collector",
+    label: "Data",
     icon: DataCollectorSVG,
   },
 };
