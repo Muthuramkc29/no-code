@@ -5,15 +5,7 @@ import * as Node from "../commons/BaseNode";
 import { dropdownTypeOptions as options } from "../../constants/dropdownTypes";
 
 export const InputNode = ({ id, data }) => {
-  const [currName, setCurrName] = useState(
-    data?.inputName || id.replace("customInput-", "input_")
-  );
-
   const [inputType, setInputType] = useState(data.inputType || "Text");
-
-  const handleNameChange = (e) => {
-    setCurrName(e.target.value);
-  };
 
   const handleTypeChange = (e) => {
     setInputType(e.target.value);
