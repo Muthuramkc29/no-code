@@ -27,7 +27,7 @@ export const InputNode = ({ id, data }) => {
         description="Pass data of different types into your workflow"
       />
       <Node.Body>
-        <Node.Chip>input_0</Node.Chip>
+        <Node.Chip>{data.id}</Node.Chip>
 
         <Node.Suggestion tip="Give the node a distinct name" />
         <Node.Dropdown

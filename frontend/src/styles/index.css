@@ -35,3 +35,7 @@
   border-color: transparent !important;
   box-shadow: none !important;
 }
+
+span[data-slate-placeholder="true"] {
+  padding-top: 0.4em;
+}

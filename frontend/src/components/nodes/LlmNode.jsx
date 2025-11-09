@@ -38,14 +38,16 @@ export const LLMNode = ({ id, data }) => {
             id={`${id}-prompt`}
             style={{ top: `${200 / 3}%` }}
           />
-          <Node.Chip>openai_1</Node.Chip>
+          <Node.Chip>{data.id}</Node.Chip>
           <Node.InputField
+            textarea={true}
             label={"System (Instructions)"}
             value={instructions}
             onChange={handleInstructionsChange}
             placeholder="Answer the Question based on Context in a professional manner."
           />
           <Node.InputField
+            textarea={true}
             label={"Prompt"}
             placeholder={`Type "{{" to utilize variables E.g., Question: {{input_0.text}}`}
             value={prompt}

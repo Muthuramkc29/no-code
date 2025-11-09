@@ -26,7 +26,7 @@ export const OutputNode = ({ id, data }) => {
         description="Output data of different types from your workflow."
       />
       <Node.Body>
-        <Node.Chip>output_0</Node.Chip>
+        <Node.Chip>{data.id}</Node.Chip>
         <Node.Dropdown
           label={"Type"}
           options={options}

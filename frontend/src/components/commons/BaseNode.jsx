@@ -1,3 +1,5 @@
+import RichEditor from "./RichEditor";
+
 const Root = ({ children }) => {
   return (
     <div
@@ -78,7 +80,14 @@ const Chip = ({ children }) => {
   );
 };
 
-const InputField = ({ label, value, onChange, placeholder }) => {
+const InputField = ({
+  label,
+  value,
+  onChange,
+  placeholder,
+  richText = false,
+  textarea = false,
+}) => {
   return (
     <div
       className="relative w-full nodrag h-full flex flex-col gap-2 my-2"
@@ -98,13 +107,27 @@ const InputField = ({ label, value, onChange, placeholder }) => {
         className="flex flex-row w-full items-center h-full relative cursor-text"
         translate="no"
       >
-        <input
-          className="w-full border border-[rgb(173_172_176)] rounded-md px-3 py-2 text-xl focus:outline-none focus:border-[#625afa]"
-          type="text"
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-        />
+        {richText ? (
+          <RichEditor
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder || "Enter text..."}
+          />
+        ) : textarea ? (
+          <textarea
+            className="w-full border border-gray-300 rounded-md px-3 py-2 text-lg focus:outline-none focus:border-blue-500"
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder || "Enter text..."}
+          />
+        ) : (
+          <input
+            className="w-full border border-gray-300 rounded-md px-3 py-2 text-lg focus:outline-none focus:border-blue-500"
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder || "Enter text..."}
+          />
+        )}
       </div>
     </div>
   );

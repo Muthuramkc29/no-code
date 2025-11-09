@@ -17,15 +17,18 @@ export const TextNode = ({ id, data }) => {
         title="Text"
         description=" Accepts Text from upstream nodes and allows you to write additional text / concatenate different texts to pass to downstream nodes."
       />
+      <Handle type="target" position={Position.Left} id={`${id}-text`} />
       <Node.Body>
-        <Node.Chip>text_0</Node.Chip>
+        <Node.Chip>{data.id}</Node.Chip>
         <Node.InputField
+          richText={true}
+          nodeMeta={data}
           label={"Text"}
           value={currText}
           onChange={handleTextChange}
         />
       </Node.Body>
-      <Handle type="source" position={Position.Right} id={`${id}-output`} />
+      <Handle type="source" position={Position.Right} id={`${id}-text`} />
     </Node.Root>
   );
 };

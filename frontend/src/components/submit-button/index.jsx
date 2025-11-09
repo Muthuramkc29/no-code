@@ -42,9 +42,9 @@ export const SubmitButton = () => {
                 • Number of Edges: ${data.num_edges}
                 • Is DAG: ${data.is_dag ? "Yes" : "No"}`;
 
-      showAlert(message, !data.is_dag);
+      showAlert(message);
     } catch (error) {
-      showAlert(error.message, true);
+      showAlert("Something went wrong", true);
     } finally {
       setLoading(false);
     }
@@ -66,26 +66,17 @@ export const SubmitButton = () => {
       </div>
       {alert && (
         <div
-          className={`fixed top-5 right-5 p-5 rounded-lg shadow-lg z-[1000] max-w-[380px]
-            ${
-              alert.isError
-                ? "bg-red-50 text-red-800 border-l-4 border-red-500"
-                : "bg-green-50 text-green-800 border-l-4 border-green-500"
-            }
+          className="fixed top-5 right-5 p-5 rounded-lg shadow-lg z-[1000] max-w-[380px] bg-green-50 text-green-800 border-l-4 border-green-500
             transform transition-all duration-500 ease-in-out
             animate-[fadeIn_0.3s_ease-in-out]
             hover:translate-x-[-5px]
-            flex flex-col gap-2`}
+            flex flex-col gap-2"
         >
           <div className="flex items-start justify-between">
-            <span className="font-medium">
-              {alert.isError ? "Error" : "Success"}
-            </span>
+            <span className="font-medium">Submitted Pipeline</span>
             <button
               onClick={() => setAlert(null)}
-              className={`ml-4 hover:opacity-70 transition-opacity ${
-                alert.isError ? "text-red-600" : "text-green-600"
-              }`}
+              className="ml-4 hover:opacity-70 transition-opacity text-green-600"
             >
               ×
             </button>
