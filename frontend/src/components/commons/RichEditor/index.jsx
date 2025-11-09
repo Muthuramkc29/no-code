@@ -75,6 +75,7 @@ const RichEditor = ({ value, onChange, placeholder }) => {
   };
 
   const connectEdges = () => {
+    // TODO: Add dynamic edge connections support by getting node's metadata
     connectTextNodeToLLM();
   };
 
@@ -149,6 +150,8 @@ const RichEditor = ({ value, onChange, placeholder }) => {
         renderElement={renderElement}
         renderLeaf={renderLeaf}
         onKeyDown={onKeyDown}
+        value={value}
+        onChange={onChange}
         placeholder={placeholder || "Type {{ to insert a variable..."}
       />
       {target && variables.length > 0 && (
@@ -267,18 +270,6 @@ const initialValue = [
     type: "paragraph",
     children: [{ text: "" }],
   },
-];
-
-// 🔹 Example variable list
-const VARIABLES = [
-  "first_name",
-  "last_name",
-  "email",
-  "company",
-  "job_title",
-  "date",
-  "city",
-  "country",
 ];
 
 export default RichEditor;

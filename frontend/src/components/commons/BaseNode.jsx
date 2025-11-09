@@ -85,7 +85,7 @@ const InputField = ({
   value,
   onChange,
   placeholder,
-  richText = false,
+  allowVariables = false,
   textarea = false,
 }) => {
   return (
@@ -107,7 +107,7 @@ const InputField = ({
         className="flex flex-row w-full items-center h-full relative cursor-text"
         translate="no"
       >
-        {richText ? (
+        {allowVariables ? (
           <RichEditor
             value={value}
             onChange={onChange}

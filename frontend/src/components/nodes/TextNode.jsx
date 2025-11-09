@@ -21,9 +21,9 @@ export const TextNode = ({ id, data }) => {
       <Node.Body>
         <Node.Chip>{data.id}</Node.Chip>
         <Node.InputField
-          richText={true}
-          nodeMeta={data}
+          allowVariables={true}
           label={"Text"}
+          placeholder={`Type "{{" to utilize variables`}
           value={currText}
           onChange={handleTextChange}
         />

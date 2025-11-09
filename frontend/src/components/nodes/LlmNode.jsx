@@ -47,9 +47,9 @@ export const LLMNode = ({ id, data }) => {
             placeholder="Answer the Question based on Context in a professional manner."
           />
           <Node.InputField
-            textarea={true}
+            allowVariables={true}
             label={"Prompt"}
-            placeholder={`Type "{{" to utilize variables E.g., Question: {{input_0.text}}`}
+            placeholder={`Type a prompt or "{{" to utilize variables`}
             value={prompt}
             onChange={handlePromptChange}
           />
