@@ -6,7 +6,7 @@ import { ReactFlowProvider } from "reactflow";
 function App() {
   return (
     <ReactFlowProvider>
-      <div className="flex flex-col flex-1 overflow-hidden m-8 bg-quaternary border border-primary rounded-lg shadow-xs relative z-20 m-2">
+      <div className="flex flex-col flex-1 overflow-hidden m-2 bg-quaternary border border-primary rounded-lg shadow-xs relative z-20 m-2">
         <Header />
         <PipelineToolbar />
         <PipelineUI />
